@@ -1,0 +1,157 @@
+* {
+    font-family: "Roboto", sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+#container {
+    width: 100%;
+    height: 100%;
+    margin: 3px;
+    background-color: #FFFFFF;
+}
+
+#proc {
+    display: contents;
+}
+  
+  input, button, textarea, select {
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    background-image: none;
+    background-color: #dadad3;
+    box-shadow: none;
+    padding: 5px;
+  }
+
+  input, select {
+      font-size: 2em;
+  }
+
+  input:focus, button:focus, textarea:focus, select:focus {
+    outline: none;
+  }
+  
+  textarea {
+    min-height: 450px;
+    resize: vertical;
+    font-size: 2em;
+  }
+  
+  button {
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .issue-card {
+    border: 1px solid black;
+    max-width: 980px;
+    min-height: 1000px;
+    background-color: #fff;
+    margin: 0 auto;
+    box-shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
+  }
+  .issue-header {
+    text-align: center;
+    padding: 8px;
+    font-size: 24px;
+    font-weight: 700;
+    border-bottom: 1px solid black;
+  }
+  .issue-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .issue-body__message {
+    margin-top: 10px;
+    min-height: 800px;
+  }
+  .issue-body button {
+    margin-top: 10px;
+    width: 100%;
+    min-height: 100px;
+    font-size: 3em;
+    align-self: flex-end;
+  }
+
+  #header {
+    width: 100%;
+    text-align: center;
+    font-family: Arial;
+}
+
+#header img {
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.cpblue {
+    color: #003F72;
+}
+
+.cpgray {
+    color: #807F83;
+}
+/*
+html, body {
+    margin: 0;
+    min-height: 100%;
+    background-color: #807F83;
+}
+#container {
+    width: 100em;
+    background-color: #807F83;
+}
+
+#content {
+    width: 100em;
+    text-align: center;
+}
+
+TEXTAREA {
+    position: relative;
+    width: 90%;
+    padding: 5px;
+    height: 400px;
+}
+
+#header {
+    width: 100%;
+    text-align: center;
+    font-family: Arial;
+}
+
+#header img {
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.cpblue {
+    color: #003F72;
+}
+
+.cpgray {
+    color: #807F83;
+}
+
+@media only screen and (max-width: 600px) {
+    html, body, #container {
+        margin: 0;
+        min-height: 100%;
+    }
+}
+*/
