@@ -39,25 +39,27 @@ if(isset($_COOKIE["empnum"])){
 				</DIV>
 				<FORM id="theform" class="issue-body" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>" method="POST">
 					<INPUT inputmode="numeric" id="empID" name="empID" type="text" class="<?php echo $empIDClass;?>" placeholder="Employee #" value="<?php echo $empNum?>" required/><BR>
-                    <INPUT id="empEmail" name="empEmail" type="text" class="<?php echo $hideQ;?>" placeholder="Email Address" value=<?php echo $empEmail;?>/><BR>
-                    <INPUT id="empPhone" name="empPhone" type="text" class="<?php echo $hideQ;?>" placeholder="Phone Number" value=<?php echo $empPhone;?>/><BR>
-                    <INPUT id="empName" name="empName" type="text" class="<?php echo $hideQ;?>" placeholder="Name" value=<?php echo $empName;?>/><BR>
-                    <P class="<?php echo $hideQ;?>">Do you have any of the following new or worsening symptoms<BR>Symptoms should not be chronic or related to other known causes or conditions.</P>
-                    <LABEL class="checkBox">Fever or Chills: <INPUT name="q1[]" type="checkbox">
-                    <LABEL class="checkBox">Shortness of Breath: <INPUT name="q1[]" type="checkbox">
-                    <LABEL class="checkBox">Loss of Smell/Taste: <INPUT name="q1[]" type="checkbox">
-                    <LABEL class="checkBox">Sore Throat: <INPUT name="q1[]" type="checkbox">
-                    <LABEL class="checkBox">Difficulty Swallowing: <INPUT name="q1[]" type="checkbox">
-                    <LABEL class="checkBox">Pink Eye: <INPUT name="q1[]" type="checkbox">
-                    <LABEL class="checkBox">Runny Nose (Not Allergy): <INPUT name="q1[]" type="checkbox">
-                    <LABEL class="checkBox">Digestive Issues: <INPUT name="q1[]" type="checkbox">
-                    <LABEL class="checkBox">Falling Down: <INPUT name="q1[]" type="checkbox">
-                    <LABEL class="checkBox">Headache: <INPUT name="q1[]" type="checkbox">
-                    <LABEL class="checkBox">Muscle Aches: <INPUT name="q1[]" type="checkbox">
-                    <LABEL class="checkBox">Fatigue: <INPUT name="q1[]" type="checkbox">
-                    <LABEL class="checkBox">Has a health professional indicated that you should be isolating: <INPUT name="q1[]" type="checkbox">
-                    <LABEL class="checkBox">Have you tested positive for Covid in the last 10 days: <INPUT name="q1[]" type="checkbox">
-                    <LABEL class="checkBox">Have you been in contact with anyone with the previous conditions: <INPUT name="q1[]" type="checkbox">
+                    <DIV id="covidQuestions" class="<?php echo $hideQ;?>">
+                        <INPUT id="empEmail" name="empEmail" type="text" class="<?php echo $hideQ;?>" placeholder="Email Address" value="<?php echo $empEmail;?>"/><BR>
+                        <INPUT id="empPhone" name="empPhone" type="text" class="<?php echo $hideQ;?>" placeholder="Phone Number" value="<?php echo $empPhone;?>"/><BR>
+                        <INPUT id="empName" name="empName" type="text" class="<?php echo $hideQ;?>" placeholder="Name" value="<?php echo $empName;?>"/><BR>
+                        <P class="<?php echo $hideQ;?>">Do you have any of the following new or worsening symptoms<BR>Symptoms should not be chronic or related to other known causes or conditions.</P>
+                        <LABEL class="checkBox">Fever or Chills: </LABEL><INPUT name="q1[]" type="checkbox"><BR>
+                        <LABEL class="checkBox">Shortness of Breath: </LABEL><INPUT name="q1[]" type="checkbox"><BR>
+                        <LABEL class="checkBox">Loss of Smell/Taste: </LABEL><INPUT name="q1[]" type="checkbox"><BR>
+                        <LABEL class="checkBox">Sore Throat: </LABEL><INPUT name="q1[]" type="checkbox"><BR>
+                        <LABEL class="checkBox">Difficulty Swallowing: </LABEL><INPUT name="q1[]" type="checkbox"><BR>
+                        <LABEL class="checkBox">Pink Eye: </LABEL><INPUT name="q1[]" type="checkbox"><BR>
+                        <LABEL class="checkBox">Runny Nose (Not Allergy): </LABEL> <INPUT name="q1[]" type="checkbox"><BR>
+                        <LABEL class="checkBox">Digestive Issues: </LABEL><INPUT name="q1[]" type="checkbox"><BR>
+                        <LABEL class="checkBox">Falling Down: </LABEL><INPUT name="q1[]" type="checkbox"><BR>
+                        <LABEL class="checkBox">Headache: </LABEL><INPUT name="q1[]" type="checkbox"><BR>
+                        <LABEL class="checkBox">Muscle Aches: </LABEL><INPUT name="q1[]" type="checkbox"><BR>
+                        <LABEL class="checkBox">Fatigue: </LABEL><INPUT name="q1[]" type="checkbox"><BR>
+                        <LABEL class="checkBox">Has a health professional indicated that you should be isolating: </LABEL><INPUT name="q1[]" type="checkbox"><BR>
+                        <LABEL class="checkBox">Have you tested positive for Covid in the last 10 days: </LABEL><INPUT name="q1[]" type="checkbox"><BR>
+                        <LABEL class="checkBox">Have you been in contact with anyone with the previous conditions: </LABEL><INPUT name="q1[]" type="checkbox"><BR>
+                    </DIV>
 					<BUTTON id="submit" class="issue-body__submit" onclick="document.getElementById('theform').submit();">SEND</BUTTON>
 				</FORM>
 			</DIV>
