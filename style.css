@@ -103,6 +103,11 @@
 .cpgray {
     color: #807F83;
 }
+
+.checkBox{
+    width: 300px;
+    overflow-wrap: normal;
+}
 /*
 html, body {
     margin: 0;
