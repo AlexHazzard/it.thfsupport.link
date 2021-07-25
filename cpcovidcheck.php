@@ -7,7 +7,21 @@ try{
     print "Error: " . $e->getMessage() . "<BR/>";
     die();
 }
-
+if(isset($_POST['empID'])){
+    $instruction = "Please Fill Out Form";
+    $empIDClass = "hidden";
+    $hideQ = "issue-body__text";
+}else{
+    $instruction = "Enter Employee Number";
+    $empIDClass = "issue-body__text";
+    $hideq = "hidden";
+}
+$procStyle = "hidden";
+if(isset($_COOKIE["empnum"])){
+    $empNum = $_COOKIE["empnum"];
+}else{
+    $empNum = "";
+}
 ?>
 
 <HTML>
@@ -21,28 +35,35 @@ try{
 			
 			<DIV class="issue-card">
 				<DIV class="issue-header">
-					<P style="font-size: 16px">Give brief description of the issue</P>
+					<P style="font-size: 16px"><?php echo $instruction;?></P>
 				</DIV>
 				<FORM id="theform" class="issue-body" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>" method="POST">
-					<INPUT inputmode="numeric" id="empID" name="empID" type="text" class="issue-body__text" placeholder="Employee #" value="<?php echo $empNum?>" required/><BR>
-					<SELECT id="quickIssue" name="quickIssue" class="issue-body__text" form="theform">
-						<OPTION value="">Quick Select</OPTION>
-						<OPTION value="Frozen Screen">Screen Frozen</OPTION>
-						<OPTION value="No Power">No Power</OPTION>
-						<OPTION value="Debit Terminal Issue">Debit Terminal Issue</OPTION>
-					</SELECT>
-					<INPUT id="termID" name="termID" type="text" class="hidden" value = "<?php echo $termID?>">
-					<TEXTAREA id="problem" name="problem" type="text" class="issue-body__message" placeholder="Issue" value=""></TEXTAREA>
+					<INPUT inputmode="numeric" id="empID" name="empID" type="text" class="<?php echo $empIDClass;?>" placeholder="Employee #" value="<?php echo $empNum?>" required/><BR>
+                    <INPUT id="empEmail" name="empEmail" type="text" class="<?php echo $hideQ;?>" placeholder="Email Address" value=<?php echo $empEmail;?>/><BR>
+                    <INPUT id="empPhone" name="empPhone" type="text" class="<?php echo $hideQ;?>" placeholder="Phone Number" value=<?php echo $empPhone;?>/><BR>
+                    <INPUT id="empName" name="empName" type="text" class="<?php echo $hideQ;?>" placeholder="Name" value=<?php echo $empName;?>/><BR>
+                    <P class="<?php echo $hideQ;?>">Do you have any of the following new or worsening symptoms<BR>Symptoms should not be chronic or related to other known causes or conditions.</P>
+                    <LABEL class="checkBox">Fever or Chills: <INPUT name="q1[]" type="checkbox">
+                    <LABEL class="checkBox">Shortness of Breath: <INPUT name="q1[]" type="checkbox">
+                    <LABEL class="checkBox">Loss of Smell/Taste: <INPUT name="q1[]" type="checkbox">
+                    <LABEL class="checkBox">Sore Throat: <INPUT name="q1[]" type="checkbox">
+                    <LABEL class="checkBox">Difficulty Swallowing: <INPUT name="q1[]" type="checkbox">
+                    <LABEL class="checkBox">Pink Eye: <INPUT name="q1[]" type="checkbox">
+                    <LABEL class="checkBox">Runny Nose (Not Allergy): <INPUT name="q1[]" type="checkbox">
+                    <LABEL class="checkBox">Digestive Issues: <INPUT name="q1[]" type="checkbox">
+                    <LABEL class="checkBox">Falling Down: <INPUT name="q1[]" type="checkbox">
+                    <LABEL class="checkBox">Headache: <INPUT name="q1[]" type="checkbox">
+                    <LABEL class="checkBox">Muscle Aches: <INPUT name="q1[]" type="checkbox">
+                    <LABEL class="checkBox">Fatigue: <INPUT name="q1[]" type="checkbox">
+                    <LABEL class="checkBox">Has a health professional indicated that you should be isolating: <INPUT name="q1[]" type="checkbox">
+                    <LABEL class="checkBox">Have you tested positive for Covid in the last 10 days: <INPUT name="q1[]" type="checkbox">
+                    <LABEL class="checkBox">Have you been in contact with anyone with the previous conditions: <INPUT name="q1[]" type="checkbox">
 					<BUTTON id="submit" class="issue-body__submit" onclick="document.getElementById('theform').submit();">SEND</BUTTON>
 				</FORM>
 			</DIV>
 		</DIV>
-		<DIV class="<?php echo $procStyle?>">
-			IT has been alerted and is aware of your issue<?php echo $procStyle?><BR>
-			<?php echo $termID?><BR>
-			<?php echo $empID?><BR>
-			<?php echo $problem?><BR>
-			<A HREF="termsupport.php?termID=<?php echo $termID?>"><BUTTON class="issue-body__submit">BACK</BUTTON>
+		<DIV id="procContainer" class="<?php echo $procStyle?>">
+
 		</DIV>
 	</BODY>
 </HTML>
