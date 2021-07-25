@@ -14,7 +14,7 @@ if(isset($_POST['empID'])){
 }else{
     $instruction = "Enter Employee Number";
     $empIDClass = "issue-body__text";
-    $hideq = "hidden";
+    $hideQ = "hidden";
 }
 $procStyle = "hidden";
 if(isset($_COOKIE["empnum"])){
