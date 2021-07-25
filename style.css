@@ -105,7 +105,8 @@
 }
 
 .checkBox{
-    width: fit-content;
+    width: 75%;
+    display: inline-flex;
     overflow-wrap: normal;
 }
 /*
