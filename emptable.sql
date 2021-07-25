@@ -17,8 +17,9 @@ empEmail VARCHAR(250),
 empRate DECIMAL(18,2),
 empDepartment VARCHAR(20),
 empOccupation VARCHAR(20),
-empPosition VARCHAR(20)
-);
+empPosition VARCHAR(20),
+UNIQUE (empID)
+) ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 INSERT INTO thfsupport.employees (empID,empFirstName,empLastName,empName,empAddress1,empAddress2,empCity,empProvince,empCountry,empPostalCode,empPhone,empEmail,empRate,empDepartment,empOccupation,empPosition)
 VALUES

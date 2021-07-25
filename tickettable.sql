@@ -10,4 +10,4 @@ calledBy INT,
 closedBy INT,
 ticketStatus INT,
 timeClosed TIMESTAMP
-)
+) ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
