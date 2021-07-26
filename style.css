@@ -23,7 +23,7 @@
     display: contents;
 }
   
-  input, button, textarea, select {
+  input, button, textarea, select, {
     border: 2px solid rgba(0, 0, 0, 0.6);
     background-image: none;
     background-color: #dadad3;
@@ -105,9 +105,35 @@
 }
 
 .checkBox{
-    width: 75%;
+    width: 95%;
     display: inline-flex;
     overflow-wrap: normal;
+    font-family: Arial;
+}
+
+#covidQuestions {
+  width: 100%;
+  position: relative;
+}
+
+#covidQuestions .item {
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  background-image: none;
+  background-color: #dadad3;
+  box-shadow: none;
+  padding: 5px;
+  font-size: 2em;
+  font-family: Arial;
+}
+
+#covidQuestions label{
+  font-family: Arial;
+  display: inline-flex;
+}
+
+#covidQuestions input[type=checkbox] {
+  transform: scale(2);
+  padding: 5px;
 }
 /*
 html, body {
