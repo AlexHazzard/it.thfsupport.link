@@ -23,7 +23,7 @@
     display: contents;
 }
   
-  input, button, textarea, select, {
+  input, button, textarea, select {
     border: 2px solid rgba(0, 0, 0, 0.6);
     background-image: none;
     background-color: #dadad3;
